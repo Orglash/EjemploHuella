@@ -20,11 +20,11 @@ public class BiometricUtils {
 
 
     /*
-     * Condition I: Check if the android version in device is greater than
-     * Marshmallow, since fingerprint authentication is only supported
-     * from Android 6.0.
-     * Note: If your project's minSdkversion is 23 or higher,
-     * then you won't need to perform this check.
+     * Condicion 1: Comprobar si la version del dispositivo es superior a
+     * Marshmallow, ya que la autenticacion mediante huella solo se da
+     * a partir de Android 6.0.
+     * Nota: Si la version minima de SDK es 23,
+     * esta comprobacion no es necesaria.
      *
      * */
     public static boolean isSdkVersionSupported() {
@@ -34,10 +34,10 @@ public class BiometricUtils {
 
 
     /*
-     * Condition II: Check if the device has fingerprint sensors.
-     * Note: If you marked android.hardware.fingerprint as something that
-     * your app requires (android:required="true"), then you don't need
-     * to perform this check.
+     * Condicion 2: Comprueba que el dispositivo posee sensor de huellas.
+     * Nota: Si marcas android.hardware.fingerprint como requisito de
+     * tu aplicacion (android:required="true"), no es necesario
+     * realizar esta comprobacion.
      *
      * */
     public static boolean isHardwareSupported(Context context) {
@@ -48,9 +48,9 @@ public class BiometricUtils {
 
 
     /*
-     * Condition III: Fingerprint authentication can be matched with a
-     * registered fingerprint of the user. So we need to perform this check
-     * in order to enable fingerprint authentication
+     * Condicion 3: La autenticacion de huella se compara con una huella
+     * que ya tenga el usuario registrada. Por tanto tenemos que comprobar que
+     * exista alguna para poder habilitar la autenticacion.
      *
      * */
     public static boolean isFingerprintAvailable(Context context) {
@@ -61,9 +61,9 @@ public class BiometricUtils {
 
 
     /*
-     * Condition IV: Check if the permission has been added to
-     * the app. This permission will be granted as soon as the user
-     * installs the app on their device.
+     * Condicion 4: Comprobar si el permiso se ha otorgado a
+     * la app. Esta peticion de permiso se hace en cuanto el usuario
+     * instala la aplicacion en su dispositivo.
      *
      * */
     public static boolean isPermissionGranted(Context context) {
